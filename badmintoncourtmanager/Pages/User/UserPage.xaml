@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage Title="Admin Users" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="badmintoncourtmanager.Pages.UserPage">
+	<ContentPage.Content>
+        
+        <StackLayout Padding="20" HorizontalOptions="CenterAndExpand">
+            <Label Text="{Binding PageTitle}" FontSize="20" HorizontalTextAlignment="Center"></Label>
+            <Frame BackgroundColor="Silver" HasShadow="false">
+                <StackLayout Padding="20" WidthRequest="400">
+                <Label Text="Name"></Label>
+                <Entry Placeholder="Name" Text="{Binding User.Name}"></Entry>
+                <Label Text="Username"></Label>        
+                <Entry Placeholder="Username" Text="{Binding User.Username}"></Entry>
+                <Label Text="Password"></Label>
+                <Entry IsPassword="true" Text="{Binding User.Password}"></Entry>
+
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="20">
+                <Button Text="Save" Command="{Binding SaveUser}"></Button>
+                <Button Text="Delete" Command="{Binding DeleteUser}"></Button>
+                        </StackLayout>
+                    </StackLayout>
+            </Frame>
+        </StackLayout>
+            
+	</ContentPage.Content>
+</ContentPage>

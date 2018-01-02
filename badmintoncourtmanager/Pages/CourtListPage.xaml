@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage x:Name="CourtListPage" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="badmintoncourtmanager.Pages.CourtListPage"
+    xmlns:custom="clr-namespace:badmintoncourtmanager.CustomViews">
+	<ContentPage.Content>
+        <StackLayout BackgroundColor="Silver">
+
+            <!--
+            <ListView ItemsSource="{Binding CourtList}" HasUnevenRows="true">
+            <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                        <StackLayout Padding="10,10,10,10">
+                            <Label Text="{Binding Name}"></Label>
+                            <Label Text="{Binding Occupied}"></Label>
+                               <custom:BadmintonCourtView></custom:BadmintonCourtView>
+                        </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            -->
+            <ScrollView>
+                <ScrollView.Content>
+                    <StackLayout x:Name="MainCourtLayout" Padding="20">
+                    </StackLayout>
+                </ScrollView.Content>
+            </ScrollView>
+        </StackLayout>
+	</ContentPage.Content>
+</ContentPage>

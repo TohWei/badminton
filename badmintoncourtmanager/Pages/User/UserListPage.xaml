@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="badmintoncourtmanager.Pages.UserListPage">
+	<ContentPage.Content>
+        <StackLayout>
+            <ListView ItemsSource="{Binding UserList}" SelectedItem="{Binding SelectedItem}" HasUnevenRows="true">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10,10,10,10" Orientation="Vertical" VerticalOptions="CenterAndExpand">
+                                <StackLayout Padding="10,10,10,10" Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                                    <Label Text="ID:"></Label>
+                                    <Label Text="{Binding ID}" WidthRequest="30"></Label>
+                                    <Label Text="Name:"></Label>
+                                    <Label Text="{Binding Name}" WidthRequest="150"></Label>
+                                    <Label Text="Role:"></Label>
+                                    <Label Text="{Binding UserRole}"></Label>
+                                 </StackLayout>   
+                                <StackLayout Padding="10,10,10,10" Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                                    <Label Text="Username:"></Label>
+                                    <Label Text="{Binding Username}"></Label>
+                                    <Label Text="Password:"></Label>
+                                    <Label Text="{Binding Password}"></Label>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <StackLayout>
+                <Button Text="Create New User" Command="{Binding CreateNewUserCommand}"></Button>
+            </StackLayout>
+        </StackLayout>
+	</ContentPage.Content>
+</ContentPage>

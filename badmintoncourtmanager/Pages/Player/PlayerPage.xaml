@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="badmintoncourtmanager.Pages.PlayerPage">
+	<ContentPage.Content>
+        <StackLayout Padding="20" HorizontalOptions="CenterAndExpand">
+            <Label Text="{Binding PageTitle}" FontSize="20" HorizontalTextAlignment="Center"></Label>
+            <Frame BackgroundColor="Silver" HasShadow="false">
+                <StackLayout Orientation="Horizontal">
+                    <StackLayout Padding="20" WidthRequest="200">
+                        <Label Text="First Name"></Label>
+                        <Entry Placeholder="First name" Text="{Binding Player.FirstName}"></Entry>
+                        <Label Text="Last Name"></Label>        
+                        <Entry Placeholder="Last name" Text="{Binding Player.LastName}"></Entry>
+                        <Label Text="Gender"></Label>
+                        <Picker ItemsSource="{Binding GenderPickerList}" SelectedItem="{Binding SelectedItemGender}"></Picker>
+
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                            <Label Text="Level"></Label>
+                            <Label Text="{Binding PlayerLevel}"></Label>
+                        </StackLayout>
+                        <Slider Minimum="0" Maximum="100" Value="{Binding LevelValueChangedSlider}"></Slider>
+                        <Label Text="D.O.B"></Label>
+                        <DatePicker Format="dd-MM-yyyy" MinimumDate="{Binding DatePickerMinimumDateDOB}" Date="{Binding DefaultDOB}"></DatePicker>
+                        <!--Entry Text="{Binding Player.DOB}"></Entry-->
+                    </StackLayout>
+
+                    <StackLayout x:Name="photoHolder" Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White">
+                    <Image x:Name="imagePhoto" WidthRequest="300" HeightRequest="300" BackgroundColor="Gray" Source="{Binding ImageSource}"></Image>
+                    <Label Text="{Binding PhotoFilePathToFileSys}"></Label>
+                        <Button Text="Take Photo" Command="{Binding TakePhoto}"></Button>
+                        <Button Text="Pick Photo" Command="{Binding PickPhoto}"></Button>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+
+            <Frame BackgroundColor="Silver" HasShadow="false">
+            <StackLayout HorizontalOptions="CenterAndExpand">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="20">
+                    <Button Text="Save" Command="{Binding SavePlayer}"></Button>
+                    <Button Text="Delete" Command="{Binding DeletePlayer}" IsVisible="{Binding HideBtnDelete}"></Button>
+                </StackLayout>
+            </StackLayout>
+            </Frame>
+        </StackLayout>
+	</ContentPage.Content>
+</ContentPage>
