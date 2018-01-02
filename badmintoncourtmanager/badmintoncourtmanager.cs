@@ -10,7 +10,7 @@ namespace badmintoncourtmanager
     {
         public App()
         {
-            //Dependency injection
+            //Dependency injection using FreshMvvm
             SetupIOC();
 
             MainPage = FreshMvvm.FreshPageModelResolver.ResolvePageModel<LoginPageModel>();
